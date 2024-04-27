@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  react-app:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    environment:
+        - NEXT_PUBLIC_API_DOMAIN='http://localhost:3000/api/submitForm'
+        - POSTGRES_PRISMA_URL='postgres://default:LEg8zasdfY3p@ep-rough-mode-a7m7hxyd-pooler.ap-southeast-2.aws.neon.tech:5432/fcl-db?sslmode=require&pgbouncer=true&connect_timeout=15'
+    image: krismile98/next-app:1.0
