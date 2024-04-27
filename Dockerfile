@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 # copy all files from current directory to docker working directory
 COPY . .
 
-# Install production dependencies.
+# Install dependencies.
 RUN npm install 
 
 # Build the Next.js app.
