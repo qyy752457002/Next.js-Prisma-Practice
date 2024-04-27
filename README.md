@@ -1,3 +1,6 @@
+
+![image](https://github.com/qyy752457002/Next.js-Prisma-Practice/assets/88706924/93b5586b-16a2-4ea4-815f-8923417c6375)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
