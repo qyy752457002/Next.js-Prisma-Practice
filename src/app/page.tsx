@@ -27,7 +27,7 @@ const Home = () => {
     // You can use fetch or axios to send the data to your API
     try {
       // send POST request to your API
-      const response = await fetch('http://localhost:3000/api', {
+      const response = await fetch('http://localhost:3000/api/submitForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
