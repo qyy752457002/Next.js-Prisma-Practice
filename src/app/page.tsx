@@ -25,7 +25,9 @@ const Home = () => {
     // TODO: Perform the form submission to your backend
     console.log("Form Data:", formData);
 
+    // get api url from env
     const api_url = process.env.NEXT_PUBLIC_API_DOMAIN as string;
+
     // You can use fetch or axios to send the data to your API
     try {
       // send POST request to your API
