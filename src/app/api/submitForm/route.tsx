@@ -1,5 +1,6 @@
 import submitForm from "@/prisma/seed"
 
+// POST /api/submitForm
 export async function POST(req: Request) {
     try {
 

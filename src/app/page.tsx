@@ -10,6 +10,8 @@ const Home = () => {
   const [comment, setComment] = useState<string>("");
 
   // Handle form submission
+  // e 是事件对象，它代表着表单提交事件的发生。
+  // 这个事件对象中包含了与表单提交相关的信息，例如表单中输入的数据等。
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
@@ -28,10 +30,12 @@ const Home = () => {
     // get api url from env
     const api_url = process.env.NEXT_PUBLIC_API_DOMAIN as string;
 
+    console.log(api_url);
+
     // You can use fetch or axios to send the data to your API
     try {
       // send POST request to your API
-      const response = await fetch(api_url, {
+      const response = await fetch(`${api_url}/submitForm`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

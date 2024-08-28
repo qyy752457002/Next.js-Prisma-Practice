@@ -1,0 +1,37 @@
+`docker-compose.yml` 中的 `environment` 部分会自动提取项目根目录下的 `.env` 文件中的变量。
+
+**具体工作原理:**
+
+1. **加载 `.env` 文件:** 当你使用 `docker-compose up` 命令启动容器时，Docker Compose 会自动加载项目根目录下的 `.env` 文件。
+2. **解析变量:** Docker Compose 会解析 `.env` 文件中的变量，并将它们存储在环境变量列表中。
+3. **传递变量:** Docker Compose 会将解析后的环境变量传递给容器。
+
+**示例:**
+
+假设你的 `.env` 文件内容如下：
+
+```
+API_URL=http://localhost:3000/api
+DATABASE_URL=postgresql://user:password@host:port/database
+```
+
+你的 `docker-compose.yml` 文件可以这样写：
+
+```yaml
+version: '3.8'
+services:
+  my-app:
+    build: .
+    environment:
+      - API_URL=${API_URL}
+      - DATABASE_URL=${DATABASE_URL}
+```
+
+在容器启动后，`API_URL` 和 `DATABASE_URL` 环境变量将分别被设置为 `.env` 文件中定义的值。
+
+**注意:**
+
+* 如果你在 `docker-compose.yml` 中定义了与 `.env` 文件中相同的环境变量，`docker-compose.yml` 中的定义将优先级更高。
+* 为了安全起见，建议将敏感信息（例如数据库密码）存储在 `.env` 文件中，而不是直接写入 `docker-compose.yml` 文件。
+
+希望以上解释能够帮助你理解 `docker-compose` 如何使用 `.env` 文件中的变量。

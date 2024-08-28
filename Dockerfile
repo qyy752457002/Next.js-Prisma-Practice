@@ -16,4 +16,4 @@ RUN npm install
 RUN npm run build
 
 # The default command to run when starting the container
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]

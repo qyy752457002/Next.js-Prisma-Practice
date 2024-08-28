@@ -3,13 +3,19 @@ version: '3.8'
 services:
   next-app:
     stdin_open: true
+    # 容器名称
     container_name: next-app-container
     build:
+      # Dockerfile 所在目录
       context: .
+      # Dockerfile 文件名称
       dockerfile: Dockerfile
+    # 宿主机上的 3000 端口会映射到容器内的 3000 端口
     ports:
       - 3000:3000
+    # 环境变量
     environment:
-      - NEXT_PUBLIC_API_DOMAIN='/api/submitForm'
-      - POSTGRES_PRISMA_URL='postgres://default:LEg8zasdfY3p@ep-rough-mode-a7m7hxyd-pooler.ap-southeast-2.aws.neon.tech:5432/fcl-db?sslmode=require&pgbouncer=true&connect_timeout=15'
+      - NEXT_PUBLIC_API_DOMAIN=${NEXT_PUBLIC_API_DOMAIN}
+      - POSTGRES_PRISMA_URL=${POSTGRES_PRISMA_URL}
+    # 使用的镜像名称
     image: krismile98/next-app:1.0
