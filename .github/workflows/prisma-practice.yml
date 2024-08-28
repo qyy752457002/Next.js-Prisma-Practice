@@ -13,8 +13,8 @@ on:
   workflow_dispatch:
 
 env:
-  POSTGRES_PRISMA_TOKEN: ${{ secrets.POSTGRES_PRISMA_URL }}
-  NEXT_PUBLIC_API_TOKEN: ${{ secrets.NEXT_PUBLIC_API_DOMAIN }}
+  POSTGRES_PRISMA_URL: ${{ secrets.POSTGRES_PRISMA_URL }}
+  NEXT_PUBLIC_API_DOMAIN: ${{ secrets.NEXT_PUBLIC_API_DOMAIN }}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
