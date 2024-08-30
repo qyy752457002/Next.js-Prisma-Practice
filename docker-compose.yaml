@@ -2,6 +2,7 @@ version: '3.12'
 
 services:
   next-app:
+
     stdin_open: true
     # 容器名称
     container_name: next-app-container
