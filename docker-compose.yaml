@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.12'
 
 services:
   next-app:
@@ -13,9 +13,14 @@ services:
     # 宿主机上的 3000 端口会映射到容器内的 3000 端口
     ports:
       - 3000:3000
+    # 将 next-app 服务的目录（.）下的文件 挂载到容器工作目录 /usr/src/app 下
+    # 这样可以在宿主机修改代码后，容器内会同步更新
+    volumes: 
+      - .:/usr/src/app
+
     # 环境变量
     environment:
       - NEXT_PUBLIC_API_DOMAIN=${NEXT_PUBLIC_API_DOMAIN}
       - POSTGRES_PRISMA_URL=${POSTGRES_PRISMA_URL}
     # 使用的镜像名称
-    image: krismile98/next-app:1.0
+    image: krismile98/next-app:latest
